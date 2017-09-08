@@ -109,7 +109,7 @@ var education = {
     {
       title : "Networking Concepts",
       school : "Nettech",
-      dates : "February 2013 - March 2013",
+      dates : "February 2014 - March 2014",
       url : "http://www.nettech.in/notice/summer/training/2013/manipal/Nettech-Summer-Training-2013-results.html"
     },
   ],
