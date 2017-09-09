@@ -5,7 +5,7 @@ var bio ={
   name : 'Pranav Jain',
   role : "Software Developer",
   skills : ["Python","Java","HTML","CSS","JavaScript"],
-  contact : { mobile :"(716)-436-8316",
+  contacts : { mobile :"(716)-436-8316",
               email : "pranavjain3194@gmail.com",
               github : ["pranav9056","https://github.com/pranav9056"],
               location : "Buffalo"
@@ -16,11 +16,11 @@ var bio ={
     var formattedName = HTMLheaderName.replace("%data%",this.name);
     var formattedRole = HTMLheaderRole.replace("%data%",this.role);
     var formattedPic = HTMLbioPic.replace("%data%",this.biopic);
-    var formattedMobile = HTMLmobile.replace("%data%",this.contact.mobile);
-    var formattedEmail = HTMLemail.replace("%data%",this.contact.email);
-    var formattedGithub  = HTMLgithub.replace("%data%",this.contact.github[0]);
-    formattedGithub = formattedGithub.replace("%href%",this.contact.github[1]);
-    var formattedLocation = HTMLlocation.replace("%data%",this.contact.location);
+    var formattedMobile = HTMLmobile.replace("%data%",this.contacts.mobile);
+    var formattedEmail = HTMLemail.replace("%data%",this.contacts.email);
+    var formattedGithub  = HTMLgithub.replace("%data%",this.contacts.github[0]);
+    formattedGithub = formattedGithub.replace("%href%",this.contacts.github[1]);
+    var formattedLocation = HTMLlocation.replace("%data%",this.contacts.location);
     var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%",this.welcomeMessage);
     $("#header").prepend(formattedRole);
     $("#header").prepend(formattedName);
@@ -31,10 +31,12 @@ var bio ={
     $("#topContacts").append(formattedGithub);
     $("#topContacts").append(formattedLocation);
     $("#header").append(HTMLskillsStart);
-    this.skills.forEach(function(skill){
-      var formattedSkill = HTMLskills.replace("%data%",skill);
-      $("#skills").append(formattedSkill);
-    });
+    if (this.skills.length>0){
+      this.skills.forEach(function(skill){
+        var formattedSkill = HTMLskills.replace("%data%",skill);
+        $("#skills").append(formattedSkill);
+      });
+    }
   }
 }
 bio.display();
@@ -42,17 +44,17 @@ bio.display();
 var work ={
   jobs : [
       {
-        postion : "Intern",
+        title : "Intern",
         employer : "Xerox",
-        duration : "Jan 2016 – June 2016",
-        city : "Bangalore",
+        dates : "Jan 2016 – June 2016",
+        location : "Bangalore",
         description: "Independently created a web based stroke portal from conception to testing using Django and Bootstrap. Designed the database schema for the portal and created it using postgreSQL. Incorporated the functionality to upload medical reports for input as opposed to filling forms and maintained a comprehensive documentation for the portal for later maintenance"
       },
       {
-        postion : "Intern",
+        title : "Intern",
         employer : "IIT Delhi",
-        duration : "June 2015 – July 2015",
-        city : "Delhi",
+        dates : "June 2015 – July 2015",
+        location : "Delhi",
         description : "Learnt the Metasploit framework to perform penetration testing. Learnt to use meterpreter instead of sending singles for exploitation, also exploited a vulnerable windows xp machine and performed privilege escalation etc. on the exploited machine"
       }
 
@@ -60,10 +62,10 @@ var work ={
   display : function(){
     this.jobs.forEach(function(job,ind){
       var formattedEmployer = HTMLworkEmployer.replace("%data%",job.employer);
-      var formattedPosition = HTMLworkTitle.replace("%data%",job.postion);
-      var formattedDates = HTMLworkDates.replace("%data%",job.duration);
+      var formattedPosition = HTMLworkTitle.replace("%data%",job.title);
+      var formattedDates = HTMLworkDates.replace("%data%",job.dates);
       var formattedDescription = HTMLworkDescription.replace("%data%",job.description)
-      formattedLocation = HTMLworkLocation.replace("%data%",job.city);
+      formattedLocation = HTMLworkLocation.replace("%data%",job.location);
       $("#workExperience").append(HTMLworkStart);
       $(".work-entry:nth-of-type("+(ind+1)+")").append(formattedEmployer+formattedPosition);
       $(".work-entry:nth-of-type("+(ind+1)+")").append(formattedDates);
@@ -217,3 +219,4 @@ var projects = {
 }
 
 projects.display();
+$('#mapDiv').append(googleMap);
