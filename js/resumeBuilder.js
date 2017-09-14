@@ -82,14 +82,14 @@ var education = {
   schools : [
     {
       name : "University at Buffalo",
-      years : "2016 - Present",
+      dates : "2016 - Present",
       location : "Buffalo, NY, US",
       degree : "Master of Science",
       majors: "CS"
     },
     {
       name : "Manipal Instititute of Technology",
-      years : "2012 - 2016",
+      dates : "2012 - 2016",
       location : "Manipal, KA, India",
       degree : "Bachelor of Technology",
       majors: "CS"
@@ -119,7 +119,7 @@ var education = {
     this.schools.forEach(function(school,ind){
       var formattedSchool = HTMLschoolName.replace("%data%",school.name);
       var formattedDegree = HTMLschoolDegree.replace("%data%",school.degree);
-      formattedDates = HTMLschoolDates.replace("%data%",school.years);
+      formattedDates = HTMLschoolDates.replace("%data%",school.dates);
       formattedLocation = HTMLschoolLocation.replace("%data%",school.location);
       var formattedMajor = HTMLschoolMajor.replace("%data%",school.majors);
       $("#education").append(HTMLschoolStart);
