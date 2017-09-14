@@ -38,7 +38,7 @@ var bio ={
       });
     }
   }
-}
+};
 bio.display();
 
 var work ={
@@ -64,7 +64,7 @@ var work ={
       var formattedEmployer = HTMLworkEmployer.replace("%data%",job.employer);
       var formattedPosition = HTMLworkTitle.replace("%data%",job.title);
       var formattedDates = HTMLworkDates.replace("%data%",job.dates);
-      var formattedDescription = HTMLworkDescription.replace("%data%",job.description)
+      var formattedDescription = HTMLworkDescription.replace("%data%",job.description);
       formattedLocation = HTMLworkLocation.replace("%data%",job.location);
       $("#workExperience").append(HTMLworkStart);
       $(".work-entry:nth-of-type("+(ind+1)+")").append(formattedEmployer+formattedPosition);
@@ -212,11 +212,11 @@ var projects = {
         project.images.forEach(function(im){
             var formattedImage = HTMLprojectImage.replace('%data%',im);
             $(".project-entry:nth-of-type("+(ind+1)+")").append(formattedImage);
-        })
-    })
+        });
+    });
 
   }
-}
+};
 
 projects.display();
 $('#mapDiv').append(googleMap);
