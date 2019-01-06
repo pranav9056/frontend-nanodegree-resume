@@ -9,7 +9,7 @@ var bio = {
         mobile: "(716)-436-8316",
         email: "pranavjain3194@gmail.com",
         github: ["pranav9056", "https://github.com/pranav9056"],
-        location: "Buffalo"
+        location: "New York"
     },
     biopic: "images/fry.jpg",
     welcomeMessage: "I like to listen. I have learned a great deal from listening carefully. Most people never listen. - Ernest Hemingway",
@@ -38,7 +38,15 @@ var bio = {
 bio.display();
 
 var work = {
-    jobs: [{
+    jobs: [
+        {
+            title: "Software Engineer",
+            employer: "Precision-Gx Inc.",
+            dates: "Jun 2018 – Present",
+            location: "Philadelphia",
+            description: "Developing and building a platform and packages in Python which are responsible for pre-processing health-care data, training ML models using RNN's, and storing trained models for future use."
+        },
+        {
             title: "Intern",
             employer: "Xerox",
             dates: "Jan 2016 – June 2016",
